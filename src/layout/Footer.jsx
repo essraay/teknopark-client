@@ -1,5 +1,5 @@
-import { CContainer, CFooter, CRow } from "@coreui/react";
-import React from "react";
+import { CContainer, CFooter, CRow } from "@coreui/react"
+import React from "react"
 
 const Footer = () => {
   return (
@@ -10,9 +10,9 @@ const Footer = () => {
       >
         <CContainer>
           <CRow className="justify-content-center">
-            <div className="col-sm-8 col-md-5 col-lg-3 p-b-20">
+            <div className="col-sm-8 col-md-5 col-lg-3 p-b-10">
               <div className="size-h-1 flex-s-e m-b-18">
-                <h4 className="t1-m-3 text-uppercase cl-0">
+                <h4 className="t1-m-3 cl-0">
                   Sosyal Medya Hesaplarımız
                 </h4>
               </div>
@@ -38,7 +38,7 @@ const Footer = () => {
 
             <div className="col-sm-8 col-md-5 col-lg-3 p-b-20">
               <div className="size-h-1 flex-s-e m-b-18">
-                <h4 className="t1-m-3 text-uppercase cl-0">
+                <h4 className="t1-m-3 cl-0">
                   Zonguldak Teknopark A.Ş
                 </h4>
               </div>
@@ -77,7 +77,7 @@ const Footer = () => {
 
             <div className="col-sm-8 col-md-5 col-lg-3 p-b-20">
               <div className="size-h-1 flex-s-e m-b-18">
-                <h4 className="t1-m-3 text-uppercase cl-0">Hızlı Linkler</h4>
+                <h4 className="t1-m-3 cl-0">Hızlı Linkler</h4>
               </div>
 
               <div className="flex-wr-s-s">
@@ -139,22 +139,25 @@ const Footer = () => {
               </div>
               <div className="py-2">
                 <a href="#">
-                  <img width={"200px"} src="teknopark.png" alt="IMG" />
+                  <img width={"200px"} src="/teknopark.png" alt="IMG" />
                 </a>
               </div>
             </div>
           </CRow>
         </CContainer>
       </CFooter>
-      <CRow
-        className="p-3 bg-10"
-      >
-        <span className="d-flex justify-content-center" style={{ color: "white" }}>
-          © Kobizon 2022 | Tüm Hakları Saklıdır.
-        </span>
-      </CRow>
+      <CContainer fluid className="max-w-full w-100" style={{backgroundColor:"#031220"}}>
+        <div className="row p-3 w-100 container-fluid" >
+          <span
+            className="d-flex justify-content-center"
+            style={{ color: "white" }}
+          >
+            © Kobizon 2022 | Tüm Hakları Saklıdır.
+          </span>
+        </div>
+      </CContainer>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

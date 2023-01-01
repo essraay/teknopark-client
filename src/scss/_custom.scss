@@ -56,9 +56,8 @@
   margin: 1%;
   background-color: #3c4b64;
   color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
-    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
-    0 32px 64px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+    0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
   border: none;
 }
 
@@ -124,4 +123,103 @@
 .labelweight {
   display: block;
   width: 500px;
+}
+
+.magazine-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.magazine-text {
+  flex-grow: 1;
+  flex-basis: 0;
+
+  font-size: 20px;
+
+  text-align: center;
+}
+
+.magazine-icon {
+  flex-grow: 1;
+  flex-basis: 0;
+  height: 60px;
+  object-fit: contain;
+}
+
+.l-container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.l-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 750px;
+}
+@media screen and (max-width: 750px) {
+  .l-row {
+    width: 100%;
+  }
+}
+// .k-item {
+// }
+
+.k-title {
+  display: inline-block;
+  font-size: medium;
+  color: rgb(0, 132, 255);
+  cursor: pointer;
+}
+
+.k-body {
+  display: none;
+}
+
+.k-body > ul {
+  list-style: none;
+}
+
+.k-body.show {
+  display: block;
+}
+
+.navbar-dropdown-menu {
+  width: 250px;
+}
+
+.navbar-dropdown-menu > li > a {
+  font-weight: 500;
+  color: #2c344aae;
+  white-space: normal;
+  text-align: center;
+}
+
+.navbar-dropdown-menu > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: block;
+  width: 80%;
+  border-bottom: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-dropdown-menu {
+    width: 100% !important;
+    border: none !important;
+  }
 }

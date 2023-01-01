@@ -8,14 +8,16 @@ const MainLayout = () => {
     <>
       <div
         className="d-flex flex-column min-vh-100"
-        style={{ backgroundColor: "#F5F5F5" }}
       >
         <Header />
         <div className="flex flex-grow-1">
           <div className="flex-shrink-0">
             <Navbar />
           </div>
-          <div className="flex-1 pr-8 pt-12">
+          <div
+            className="flex-1 pr-8 pt-12"
+            style={{ backgroundColor: "#FFFFFF" }}
+          >
             <Outlet />
           </div>
         </div>

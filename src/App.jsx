@@ -16,6 +16,11 @@ import './vendor/slick/slick.css'
 import './vendor/MagnificPopup/magnific-popup.css'
 import './css/util.min.css'
 import './css/main.css'
+import 'swiper/css'
+import 'swiper/css';
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 export default function App() {
   return useRoutes(routes)

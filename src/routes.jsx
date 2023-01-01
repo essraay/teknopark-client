@@ -1,23 +1,30 @@
-import { lazy, Suspense } from 'react'
-import { Loading } from './components/Loading'
+import { lazy, Suspense } from "react"
+import { Loading } from "./components/Loading"
 
-const MainLayout = lazy(() => import('./layout/MainLayout'))
+const MainLayout = lazy(() => import("./layout/MainLayout"))
 
-const HomePage = lazy(() => import('./pages/HomePage'))
+const HomePage = lazy(() => import("./pages/HomePage"))
 
-const AboutUs = lazy(() => import('./pages/Institutional/AboutUs'))
-const VisionMission = lazy(() => import('./pages/Institutional/VisionMission'))
-const Management = lazy(() => import('./pages/Institutional/Management'))
-const Partners = lazy(() => import('./pages/Institutional/Partners'))
-const OurTeam = lazy(() => import('./pages/Institutional/OurTeam'))
-const KVKK = lazy(() => import('./pages/Institutional/KVKK'))
-const SSS = lazy(() => import('./pages/Institutional/SSS'))
+const NewsDetail = lazy(() => import("./pages/ContentsDetail"))
 
-const OtherLegislation = lazy(() => import('./pages/Legislation/OtherLegislation'))
+const AboutUs = lazy(() => import("./pages/Institutional/AboutUs"))
+const VisionMission = lazy(() => import("./pages/Institutional/VisionMission"))
+const Management = lazy(() => import("./pages/Institutional/Management"))
+const Partners = lazy(() => import("./pages/Institutional/Partners"))
+const OurCompanies = lazy(() => import("./pages/Institutional/OurCompanies"))
+const OurTeam = lazy(() => import("./pages/Institutional/OurTeam"))
+const KVKK = lazy(() => import("./pages/Institutional/KVKK"))
+const SSS = lazy(() => import("./pages/Institutional/SSS"))
 
-const Career = lazy(() => import('./pages/Career'))
+const OtherLegislation = lazy(() =>
+  import("./pages/Legislation/OtherLegislation")
+)
 
-const Page404 = lazy(() => import('./pages/Page404'))
+const Career = lazy(() => import("./pages/Career"))
+
+const Communication = lazy(() => import("./pages/Communication"))
+
+const Page404 = lazy(() => import("./pages/Page404"))
 
 /** @type {import('react-router-dom').RouteObject[]} */
 const routes = [
@@ -27,59 +34,75 @@ const routes = [
     children: [
       {
         index: true,
-        name: 'Anasayfa',
+        name: "Anasayfa",
         element: <HomePage />,
         lazy: true,
       },
       {
-        path: 'Hakkımızda',
+        path: "icerik/:id",
+        name: "IcerikDetay",
+        element: <NewsDetail />,
+        lazy: true,
+      },
+      {
+        path: "Hakkimizda",
         element: <AboutUs />,
         lazy: true,
       },
       {
-        path: 'VizyonMisyon',
+        path: "VizyonMisyon",
         element: <VisionMission />,
         lazy: true,
       },
       {
-        path: 'YonetimKurulu',
+        path: "YonetimKurulu",
         element: <Management />,
         lazy: true,
       },
       {
-        path: 'KurucuOrtaklarımız',
+        path: "KurucuOrtaklarımız",
         element: <Partners />,
         lazy: true,
       },
       {
-        path: 'Ekibimiz',
+        path: "Firmalarimiz",
+        element: <OurCompanies />,
+        lazy: true,
+      },
+      {
+        path: "Ekibimiz",
         element: <OurTeam />,
         lazy: true,
       },
       {
-        path: 'KVKK',
+        path: "KVKK",
         element: <KVKK />,
         lazy: true,
       },
       {
-        path: 'SSS',
+        path: "SSS",
         element: <SSS />,
         lazy: true,
       },
       {
-        path: 'DiğerMevzuat',
+        path: "DigerMevzuat",
         element: <OtherLegislation />,
         lazy: true,
       },
       {
-        path: 'Kariyer',
+        path: "Kariyer",
         element: <Career />,
+        lazy: true,
+      },
+      {
+        path: "Iletisim",
+        element: <Communication />,
         lazy: true,
       },
     ],
   },
   {
-    path: '404',
+    path: "404",
     element: <Page404 />,
     lazy: true,
   },
@@ -91,7 +114,7 @@ const mapRoute = (list) => {
     //   item.element = <PrivateRoute>{item.element}</PrivateRoute>
     // }
 
-    if (item?.lazy && 'element' in item) {
+    if (item?.lazy && "element" in item) {
       item.element = <Suspense fallback={<Loading />}>{item.element}</Suspense>
     }
 
@@ -103,7 +126,7 @@ const mapRoute = (list) => {
     //   item.element = <RouteTransition key={index}>{item.element}</RouteTransition>
     // }
 
-    if ('children' in item) {
+    if ("children" in item) {
       item.children = mapRoute(item.children)
     }
 

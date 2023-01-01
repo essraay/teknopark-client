@@ -1,116 +1,58 @@
-import { CContainer, CRow } from "@coreui/react";
+import { useState } from "react"
+import { Controller, Pagination } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 const Logo = () => {
+  const [imageList, setImageList] = useState([
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100",
+    "https://via.placeholder.com/140x100"
+  ])
+  const [controlledSwiper, setControlledSwiper] = useState(null)
   return (
-    <section className="bg-0 p-t-92 p-b-90">
-      <CContainer>
-        <div className="flex-col-c-c p-b-50">
-          <h3 className="t1-b-1 cl-3 txt-center m-b-11">Kurucu Ortaklarımız</h3>
-          <div className="size-a-2 bg-3"></div>
-        </div>
-        <CRow className="justify-content-center">
-          <div className="col-md-10 col-lg-8">
-            <div className="wrap-slick2 rs1-slick2">
-              <div className="slide-slick">
-                <div className="item-slick p-rl-15">
-                  <div className="flex-col-s-c">
-                    <div className="w-full flex-wr-sa-c">
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-01.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-02.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-03.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-04.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-05.png"
-                          alt="IMG"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="item-slick p-rl-15">
-                  <div className="flex-col-s-c">
-                    <div className="w-full flex-wr-sa-c">
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-01.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-03.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-04.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-02.png"
-                          alt="IMG"
-                        />
-                      </a>
-
-                      <a href="#" className="m-all-20">
-                        <img
-                          className="size-h-2 max-s-full hov-img2"
-                          src="images/icons/partner-05.png"
-                          alt="IMG"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="wrap-dot-slick p-t-30"></div>
+    <>
+      <div className="flex-col-c-c p-b-50 py-3">
+        <h3 className="t1-b-1 cl-3 txt-center m-b-11">Kurucu Ortaklarımız</h3>
+        <div className="size-a-2 bg-3"></div>
+      </div>
+      <Swiper
+        modules={[Pagination, Controller]}
+        slidesPerView={5}
+        spaceBetween={20}
+        pagination={{ clickable: true }}
+        autoplay={{
+          delay: 1000,
+        }}
+        controller={{ control: controlledSwiper }}
+        onSwiper={setControlledSwiper}
+      >
+        {imageList.map((image) => (
+          <SwiperSlide>
+            <div
+              className="row d-flex justify-content-center py-3"
+              style={{ margin: "10% 0" }}
+            >
+              <img
+                className="rounded-circle"
+                // style={{ objectFit: "contain" }}
+                src={image}
+                width={"10px"}
+              />
             </div>
-          </div>
-        </CRow>
-      </CContainer>
-    </section>
-  );
-};
-export default Logo;
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
+  )
+}
+export default Logo

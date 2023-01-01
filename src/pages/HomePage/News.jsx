@@ -1,67 +1,104 @@
-import {
-  CButton,
-  CCard,
-  CCardBody,
-  CCardImage,
-  CCardText,
-  CCardTitle,
-  CContainer,
-  CRow,
-} from "@coreui/react";
+import { CButton, CContainer } from "@coreui/react"
+import { NewService } from "../../services"
+import { useEffect, useMemo, useState } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination } from "swiper"
+import { dateFormat, getPath } from "../../utils"
+import LoadingSpinner from "../../components/LoadingSpinner"
+import { BASE_IMG } from "../../constants"
 
 const News = () => {
+  const [loading, setLoading] = useState(true)
+  const [items, setItems] = useState(false)
+
+  useEffect(() => {
+    NewService.getDetails().then((res) => {
+      setItems(res.data)
+      setLoading(false)
+    })
+  }, [])
+
+  const itemList = useMemo(() => {
+    if (Array.isArray(items)) {
+      return items.reverse().map((item) => ({
+        ...item,
+        icerik:
+          item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
+        route: getPath("IcerikDetay", { id: item.icerikId }),
+      }))
+    }
+    return false
+  }, [items])
+
   return (
-      <div className="kit-pos2-1">
-        <CContainer>
-          <CRow className="gap-3">
-            <CCard style={{ width: "18rem" }}>
-              <CCardImage orientation="top" src="https://via.placeholder.com/720x432" style={{ objectFit: 'cover' }}/>
-              <CCardBody>
-                <CCardTitle>Haber 1</CCardTitle>
-                <CCardText>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </CCardText>
-                <CButton href="#">Haberi Görüntüle</CButton>
-              </CCardBody>
-            </CCard>
-            <CCard style={{ width: "18rem" }}>
-              <CCardImage orientation="top" src="https://via.placeholder.com/720x432" />
-              <CCardBody>
-                <CCardTitle>Haber 2</CCardTitle>
-                <CCardText>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </CCardText>
-                <CButton href="#">Haberi Görüntüle</CButton>
-              </CCardBody>
-            </CCard>
-            <CCard style={{ width: "18rem" }}>
-              <CCardImage orientation="top" src="https://via.placeholder.com/720x432" />
-              <CCardBody>
-                <CCardTitle>Haber 3</CCardTitle>
-                <CCardText>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </CCardText>
-                <CButton href="#">Haberi Görüntüle</CButton>
-              </CCardBody>
-            </CCard>
-            <CCard style={{ width: "18rem" }}>
-              <CCardImage orientation="top" src="https://via.placeholder.com/720x432" />
-              <CCardBody>
-                <CCardTitle>Haber 4</CCardTitle>
-                <CCardText>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </CCardText>
-                <CButton href="#">Haberi Görüntüle</CButton>
-              </CCardBody>
-            </CCard>
-            
-          </CRow>
-        </CContainer>
-      </div>
-  );
-};
-export default News;
+    <section
+      className="bg-12 p-t-92 p-b-60"
+      style={{ backgroundColor: "white" }}
+    >
+      <CContainer>
+        <div className="flex-col-c-c p-b-50">
+          <h3 className="t1-b-1 cl-3 txt-center m-b-11">Haberler</h3>
+          <div className="size-a-2 bg-3"></div>
+        </div>
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={3}
+            spaceBetween={20}
+            pagination={{ clickable: true }}
+          >
+            {itemList &&
+              itemList.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div
+                    className="bg-0 h-full"
+                    style={{ backgroundColor: "#F6F6F6", margin: "10% 0" }}
+                  >
+                    <a
+                      className="hov-img0 of-hidden"
+                      style={{ backgroundColor: "#F6F6F6" }}
+                      href={item.route}
+                    >
+                      <img src={BASE_IMG + item.resim_Dizin} alt="IMG" />
+                    </a>
+
+                    <div
+                      className="bg-0 p-rl-28 p-t-26 p-b-35"
+                      style={{ backgroundColor: "#F6F6F6" }}
+                    >
+                      <div className="flex-wr-s-c p-b-9">
+                        <div className="p-r-20">
+                          <i className="fs-14 cl-7 fa fa-calendar m-r-2"></i>
+
+                          <span className="t1-s-2 cl-7">
+                            {dateFormat(item.tarih)}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="t1-s-2 cl-6 p-b-20">{item.baslik}</p>
+                      <p className="t1-s-2 cl-6 p-b-20">{item.icerik}</p>
+
+                      <CButton
+                        style={{
+                          backgroundColor: "#16A086",
+                          borderColor: "#16A086",
+                          color: "white",
+                        }}
+                        variant="outline"
+                        href={item.route}
+                      >
+                        Devamını oku..
+                      </CButton>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        )}
+      </CContainer>
+    </section>
+  )
+}
+export default News
