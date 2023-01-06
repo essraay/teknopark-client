@@ -1,33 +1,19 @@
 const Partners = () => {
   return (
-    <section>
-      <div
-        class="container"
-        style={{
-          backgroundImage: "url(bg-strategy-h4.png)",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-        }}
-      >
+    <section class="no-padding">
+      <div class="container">
         <div class="row">
           <div class="partner-list">
-            <div class="item-partner-list">
-              <h4>Kurucu Ortaklarımız</h4>
-              <br />
-              <br />
-              <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/beu.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+            <div class="item-partner-list" style={{ margin: "2% 0" }}>
+              <b className="h3 fw-bold">Kurucu Ortaklarımız</b>
+              <div class="col-3" style={{ margin: "2% 0" }}>
+                <img
+                  src="/src/assets/kurucuortaklar/beu.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
-              <br />
-              <br />
-              <div class="col-md-9">
+              <div class="col-9">
                 <h4>
                   <a href="#">Bülent Ecevit Üniversitesi</a>
                 </h4>
@@ -47,13 +33,11 @@ const Partners = () => {
             </div>
             <div class="item-partner-list">
               <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/ilozelidaresi.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+                <img
+                  src="/src/assets/kurucuortaklar/ilozelidaresi.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
               <br />
               <br />
@@ -76,13 +60,11 @@ const Partners = () => {
             </div>
             <div class="item-partner-list">
               <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/ztso.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+                <img
+                  src="/src/assets/kurucuortaklar/ztso.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
               <br />
               <br />
@@ -107,13 +89,11 @@ const Partners = () => {
             </div>
             <div class="item-partner-list">
               <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/etso.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+                <img
+                  src="/src/assets/kurucuortaklar/etso.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
               <br />
               <br />
@@ -138,13 +118,11 @@ const Partners = () => {
             </div>
             <div class="item-partner-list">
               <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/ctso.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+                <img
+                  src="/src/assets/kurucuortaklar/ctso.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
               <br />
               <br />
@@ -169,13 +147,11 @@ const Partners = () => {
             </div>
             <div class="item-partner-list">
               <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/atso.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+                <img
+                  src="/src/assets/kurucuortaklar/atso.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
               <br />
               <br />
@@ -198,13 +174,11 @@ const Partners = () => {
             </div>
             <div class="item-partner-list">
               <div class="col-md-3">
-                <a href="#">
-                  <img
-                    src="images/firmalar/dtso.png"
-                    class="img-responsive"
-                    alt="Image"
-                  />
-                </a>
+                <img
+                  src="/src/assets/kurucuortaklar/dtso.png"
+                  class="img-responsive"
+                  alt="Image"
+                />
               </div>
               <br />
               <br />
@@ -231,6 +205,6 @@ const Partners = () => {
       <br />
       <br />
     </section>
-  );
-};
-export default Partners;
+  )
+}
+export default Partners

@@ -5,9 +5,11 @@ const MainLayout = lazy(() => import("./layout/MainLayout"))
 
 const HomePage = lazy(() => import("./pages/HomePage"))
 
-const NewsDetail = lazy(() => import("./pages/ContentsDetail"))
+const NewsDetail = lazy(() => import("./pages/HomePage/NewsDetail"))
 
-const AboutUs = lazy(() => import("./pages/Institutional/AboutUs"))
+const AnnouncementDetail = lazy(() => import("./pages/HomePage/AnnouncementDetail"))
+
+const AboutUs = lazy(() => import("./pages/HomePage/AboutUs"))
 const VisionMission = lazy(() => import("./pages/Institutional/VisionMission"))
 const Management = lazy(() => import("./pages/Institutional/Management"))
 const Partners = lazy(() => import("./pages/Institutional/Partners"))
@@ -39,63 +41,80 @@ const routes = [
         lazy: true,
       },
       {
-        path: "icerik/:id",
-        name: "IcerikDetay",
+        path: "Haberler/:id",
+        name: "Haberler",
         element: <NewsDetail />,
         lazy: true,
       },
       {
+        path: "Duyurular/:id",
+        name: "Duyurular",
+        element: <AnnouncementDetail />,
+        lazy: true,
+      },
+      {
         path: "Hakkimizda",
+        name: "Hakkimizda",
         element: <AboutUs />,
         lazy: true,
       },
       {
         path: "VizyonMisyon",
+        name: "VizyonMisyon",
         element: <VisionMission />,
         lazy: true,
       },
       {
         path: "YonetimKurulu",
+        name: "YonetimKurulu",
         element: <Management />,
         lazy: true,
       },
       {
         path: "KurucuOrtaklarımız",
+        name: "KurucuOrtaklarımız",
         element: <Partners />,
         lazy: true,
       },
       {
         path: "Firmalarimiz",
+        name: "Firmalarimiz",
         element: <OurCompanies />,
         lazy: true,
       },
       {
         path: "Ekibimiz",
+        name: "Ekibimiz",
         element: <OurTeam />,
         lazy: true,
       },
       {
         path: "KVKK",
+        name: "KVKK",
         element: <KVKK />,
         lazy: true,
       },
       {
         path: "SSS",
+        name: "SSS",
         element: <SSS />,
         lazy: true,
       },
       {
         path: "DigerMevzuat",
+        name: "DigerMevzuat",
         element: <OtherLegislation />,
         lazy: true,
       },
       {
         path: "Kariyer",
+        name: "Kariyer",
         element: <Career />,
         lazy: true,
       },
       {
         path: "Iletisim",
+        name: "Iletisim",
         element: <Communication />,
         lazy: true,
       },
@@ -103,6 +122,7 @@ const routes = [
   },
   {
     path: "404",
+    name: "404",
     element: <Page404 />,
     lazy: true,
   },

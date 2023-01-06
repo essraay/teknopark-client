@@ -1,147 +1,258 @@
-import { cibMailRu, cilLocationPin, cilPhone } from "@coreui/icons";
-import CIcon from "@coreui/icons-react";
-import { CContainer, CRow } from "@coreui/react";
+import { cibMailRu, cilLocationPin, cilPhone } from "@coreui/icons"
+import CIcon from "@coreui/icons-react"
+import { CButton, CCol, CContainer, CRow, CSpinner } from "@coreui/react"
+import { useFormik } from "formik"
+import { useCallback, useRef, useState } from "react"
+import { toast, Toaster } from "react-hot-toast"
+import { CommunicationService } from "../services"
+import { FormSchema } from "../validations/FormSchema"
 
 const Communication = () => {
+  const [loading, setLoading] = useState(false)
+  const formRef = useRef()
+
+  const formik = useFormik({
+    initialValues: {
+      nameSurname: "",
+      adress: "empty",
+      email: "",
+      subject: "",
+      message: "",
+      kvkk: false,
+      acikRiza: false,
+    },
+    validationSchema: FormSchema,
+    onSubmit: (values) => {
+      CommunicationService.addForm({
+        Ad: values.nameSurname,
+        Soyad: "",
+        Email: values.email,
+        MesajKonusu: values.subject,
+        Mesaj: values.message,
+      })
+        .then((response) => {
+          console.log("response :>> ", response)
+
+          formik.resetForm()
+
+          formRef.current.querySelector("input").focus()
+
+          toast.success("Formunuz iletilmiştir!")
+        })
+        .catch((error) => {
+          console.error(error)
+          formRef.current.querySelector("input").select()
+          formRef.current.querySelector("input").focus()
+        })
+    },
+  })
+
+  const errorMessage = useCallback(
+    (key) => {
+      return (
+        <>
+          {formik.touched?.[key] && formik.errors?.[key] && (
+            <div className="text-xs text-center text-danger">
+              {formik.errors?.[key]}
+            </div>
+          )}
+        </>
+      )
+    },
+    [formik]
+  )
+
   return (
     <>
-      <section>
+      <center style={{ margin: "2% 0" }}>
         <CContainer>
-          <CRow>
-            <div className="col-md-4" style={{ margin: "2% 0" }}>
-              <CIcon
-                icon={cilLocationPin}
-                style={{ color: "#05233a" }}
-                size="3xl"
-              />
-              <h4>Adres</h4>
-              <p>
-                Çınartepe Mah., Adnan Menderes Cad., No: 91-C, 67040 Merkez
-                ZONGULDAK
-              </p>
-            </div>
-            <div className="col-md-4" style={{ margin: "2% 0" }}>
-              <CIcon icon={cilPhone} style={{ color: "#05233a" }} size="3xl" />
-              <h4>Telefon</h4>
-              <p>0 372 502 30 20</p>
-            </div>
-            <div className="col-md-4 row" style={{ margin: "2% 0" }}>
+          <Toaster position="top-right" reverseOrder={false} />
+          <CRow className="justify-content-center">
+            <CCol style={{ margin: "2% 0" }}>
               <span>
                 <CIcon
-                  icon={cibMailRu}
-                  style={{ color: "#05233a" }}
+                  icon={cilLocationPin}
+                  style={{ color: "#ffb600" }}
                   size="3xl"
                 />
               </span>
-              <h4>E-Mail</h4>
+              <div className="flex">
+                <p className="h4 fw-bold">Adres</p>
+                <p>
+                  Çınartepe Mah., Adnan Menderes Cad., No: 91-C, 67040 Merkez
+                  ZONGULDAK
+                </p>
+              </div>
+            </CCol>
+            <CCol style={{ margin: "2% 0" }}>
+              <CIcon icon={cilPhone} style={{ color: "#ffb600" }} size="3xl" />
+              <p className="h4 fw-bold">Telefon</p>
+              <p>0 372 502 30 20</p>
+            </CCol>
+            <CCol style={{ margin: "2% 0" }}>
+              <span>
+                <CIcon
+                  icon={cibMailRu}
+                  style={{ color: "#ffb600" }}
+                  size="3xl"
+                />
+              </span>
+              <p className="h4 fw-bold">E-Mail</p>
               <p>teknopark@beun.edu.tr</p>
-            </div>
+            </CCol>
           </CRow>
         </CContainer>
-      </section>
+      </center>
+
       <center>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11961.967981411803!2d31.821806!3d41.4502433!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x11daddf168e1e93f!2sZonguldak%20Teknopark!5e0!3m2!1str!2str!4v1616044642631!5m2!1str!2str"
-          width="100%"
-          height="360"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23923.808109002228!2d31.822187000000003!3d41.45059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x11daddf168e1e93f!2sZonguldak%20Teknopark!5e0!3m2!1str!2str!4v1672840852028!5m2!1str!2str"
+          width="80%"
+          height="350"
           style={{ border: "0" }}
           allowfullscreen=""
           loading="lazy"
         ></iframe>
       </center>
-      <section>
-        <CContainer>
-          <CRow>
-            <div className="col-md-12">
-              <div className="title-block title-contact">
-                <h3>Bize Ulaşın</h3>
-                <span className="bottom-title"></span>
-              </div>
-            </div>
-            <div className="form-contact-warp">
-              <form method="post">
-                <div className="col-md-4">
-                  <input
-                    type="text"
-                    className="form-control"
-                    value=""
-                    required="required"
-                    title=""
-                    placeholder="Adınız ve Soyadınız"
-                  />
-                </div>
-                <div className="col-md-4">
-                  <input
-                    type="text"
-                    className="form-control"
-                    value=""
-                    required="required"
-                    title=""
-                    placeholder="E-Mail Adresiniz"
-                  />
-                </div>
-                <div className="col-md-4">
-                  <input
-                    type="text"
-                    className="form-control"
-                    value=""
-                    required="required"
-                    title=""
-                    placeholder="Konu"
-                  />
-                </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <textarea
-                      id="textarea"
-                      className="form-control"
-                      rows="5"
-                      required="required"
-                      placeholder="Mesajınız"
-                    ></textarea>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" required="" /> Kişisel Verilerin
-                      İşlenmesine İlişkin{" "}
-                      <a
-                        // href="/docs/aydinlatma-metni.pdf"
-                        target="_blank"
-                      >
-                        Aydınlatma Metni
-                      </a>
-                      ni okudum.
-                    </label>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" required="" /> 6698 Sayılı Kişisel
-                      Verilerin Korunması Kanunu kapsamında, yukarıda paylaşmış
-                      olduğum kişisel verilerimin Zonguldak Teknopark A.Ş.
-                      tarafından aydınlatma metni doğrultusunda işlenmesine ve
-                      paylaşılmasına açık rıza gösterdiğimi, hiçbir baskı veya
-                      zorlama altında olmaksızın hür irademle kabul ve beyan
-                      ediyorum.
-                    </label>
-                  </div>
-                </div>
 
-                <div className="col-md-12">
-                  <button type="submit" className="btn-main-color">
-                    <i className="fa fa-paper-plane" aria-hidden="true"></i>{" "}
-                    Gönder
-                  </button>
+      <center>
+        <CContainer style={{ margin: "2% 0" }}>
+          <CRow>
+            {loading ? (
+              <div>Yükleniyor..</div>
+            ) : (
+              <>
+                <div className="col-md-12" style={{ margin: "2% 0" }}>
+                  <div className="title-block title-contact">
+                    <div className="h3 fw-bolder">Bize Ulaşın</div>
+                    <div
+                      className="size-a-2 bg-2"
+                      style={{ backgroundColor: "#ffb600" }}
+                    ></div>
+                  </div>
                 </div>
-              </form>
-            </div>
+                <form
+                  className="form-contact-warp"
+                  onSubmit={formik.handleSubmit}
+                  ref={formRef}
+                >
+                  <div className="col-md-12" style={{ margin: "1% 0" }}>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="nameSurname"
+                      placeholder="Adınız ve Soyadınız"
+                      feedback={formik.errors.tc}
+                      value={formik.values.nameSurname}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {errorMessage("nameSurname")}
+                  </div>
+                  <div className="col-md-12" style={{ margin: "1% 0" }}>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="email"
+                      placeholder="E-Mail Adresiniz"
+                      feedback={formik.errors.email}
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {errorMessage("email")}
+                  </div>
+                  <div className="col-md-12" style={{ margin: "1% 0" }}>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="subject"
+                      placeholder="Konu"
+                      feedback={formik.errors.subject}
+                      value={formik.values.subject}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {errorMessage("subject")}
+                  </div>
+                  <div className="col-md-12" style={{ margin: "1% 0" }}>
+                    <div className="form-group">
+                      <textarea
+                        id="textarea"
+                        className="form-control"
+                        rows="5"
+                        placeholder="Mesajınız"
+                        name="message"
+                        feedback={formik.errors.message}
+                        value={formik.values.message}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                      ></textarea>
+                      {errorMessage("message")}
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="checkbox" style={{ margin: "1% 0" }}>
+                      <label className="flex">
+                        <input
+                          type="checkbox"
+                          name="kvkk"
+                          checked={formik.values.kvkk}
+                          onChange={formik.handleChange}
+                        />{" "}
+                        Kişisel Verilerin İşlenmesine İlişkin{" "}
+                        <a
+                          href="https://localhost:5001/Files/aydinlatma-metni.pdf"
+                          target="_blank"
+                        >
+                          Aydınlatma Metni
+                        </a>
+                        ni okudum.
+                      </label>
+                      {errorMessage("kvkk")}
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="checkbox" style={{ margin: "1% 0" }}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="acikRiza"
+                          checked={formik.values.acikRiza}
+                          onChange={formik.handleChange}
+                        />
+                        6698 Sayılı Kişisel Verilerin Korunması Kanunu
+                        kapsamında, yukarıda paylaşmış olduğum kişisel
+                        verilerimin Zonguldak Teknopark A.Ş. tarafından
+                        aydınlatma metni doğrultusunda işlenmesine ve
+                        paylaşılmasına açık rıza gösterdiğimi, hiçbir baskı veya
+                        zorlama altında olmaksızın hür irademle kabul ve beyan
+                        ediyorum.
+                      </label>
+                      {errorMessage("acikRiza")}
+                    </div>
+                  </div>
+                  <div className="col-md-12" style={{ margin: "2% 0" }}>
+                    <CButton
+                      type="submit"
+                      className="btn-info"
+                      disabled={loading}
+                    >
+                      {loading && <CSpinner size="sm" className="me-3" />}
+                      <i
+                        className="fa fa-paper-plane"
+                        aria-hidden="true"
+                      ></i>{" "}
+                      Gönder
+                    </CButton>
+                  </div>
+                </form>
+              </>
+            )}
           </CRow>
         </CContainer>
-      </section>
+      </center>
     </>
-  );
-};
-export default Communication;
+  )
+}
+export default Communication

@@ -18,11 +18,9 @@ const AboutUs = () => {
                 style={{ margin: "2% 0" }}
               >
                 <span className="top-title"></span>
+                <p className="h3 fw-bold">Genel Bilgi</p>
                 <b>
-                  <h1>Genel Bilgi</h1>
-                </b>
-                <b>
-                  <p className="sub-title">Zonguldak Teknopark</p>
+                  <p className="sub-title" style={{margin:"1% 0"}}>Zonguldak Teknopark</p>
                 </b>
                 <span className="bottom-title"></span>
               </div>
@@ -54,6 +52,6 @@ const AboutUs = () => {
       <br />
       <br />
     </section>
-  );
-};
-export default AboutUs;
+  )
+}
+export default AboutUs

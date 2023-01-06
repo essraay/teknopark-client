@@ -40,7 +40,7 @@ const Slider = () => {
   const [imageList, setImageList] = useState([
     "/slider/paneltekno.jpg",
     "/slider/teknoslider2.jpg",
-    // "/slider/duyuru3.png",
+    "/slider/duyuru3.jpg",
     "/slider/proje-pazari.jpg",
     "/slider/teknofest.jpg",
     "/slider/duyuru.jpg",

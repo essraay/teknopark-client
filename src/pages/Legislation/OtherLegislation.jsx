@@ -13,15 +13,15 @@ const OtherLegislation = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="strategy-warp-h4">
-              <div className="title-block text-center">
+              <div className="title-block text-center" style={{ margin: "2% 0" }}>
                 <span className="top-title"></span>
-                <h2>Diğer Teşvikler</h2>
-                <p className="sub-title">Zonguldak Teknopark</p>
+                <p className="h3 fw-bold">Diğer Teşvikler</p>
+                <b><p className="sub-title" style={{margin:"1% 0"}}>Zonguldak Teknopark</p></b>
                 <span className="bottom-title"></span>
               </div>
-              <h4 className="demo-sub-about-text-4">
+              <p className="text-center fw-bold" style={{margin:"1% 0"}}>
                 Girişimci Firmalar için;
-              </h4>
+              </p>
               <p className="demo-sub-about-text-4">
                 Bölgede faaliyet gösteren gelir ve kurumlar vergisi
                 mükelleflerinin, münhasıran bu bölgedeki, yazılım ve Ar-ge
@@ -35,7 +35,7 @@ const OtherLegislation = () => {
                 bulması ve Bakanlığın izin vermesi ile bölgede yatırımı
                 yapılabilmektedir.
               </p>
-              <h4 className="demo-sub-about-text-4">
+              <h4 className="text-center fw-bold" style={{margin:"1% 0"}}>
                 Öğretim Elemanları için;
               </h4>
               <p className="demo-sub-about-text-4">
@@ -50,7 +50,7 @@ const OtherLegislation = () => {
                 Üniversite personelinin, yönetici şirkette görevlendirilmeleri
                 sağlanmaktadır.
               </p>
-              <h4 className="demo-sub-about-text-4">
+              <h4 className="text-center fw-bold" style={{margin:"1% 0"}}>
                 Ar-Ge ve Destek Personeli için;
               </h4>
               <p className="demo-sub-about-text-4">

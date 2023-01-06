@@ -37,24 +37,21 @@ const Footer = () => {
             </div>
 
             <div className="col-sm-8 col-md-5 col-lg-3 p-b-20">
-              <div className="size-h-1 flex-s-e m-b-18">
+              <div className="size-h-1 flex-s-e m-b-18 justify-content-center">
                 <h4 className="t1-m-3 cl-0">
                   Zonguldak Teknopark A.Ş
                 </h4>
               </div>
-
               <ul>
                 <li className="flex-wr-s-s t1-s-2 cl-13 p-b-9">
                   <span className="size-w-3">
                     <i className="fa fa-map-marker" aria-hidden="true"></i>
                   </span>
-
                   <span className="size-w-4">
                     Çınartepe Mah., Adnan Menderes Cad., No: 91-C, 67040 Merkez
                     ZONGULDAK
                   </span>
                 </li>
-
                 <li className="flex-wr-s-s t1-s-2 cl-13 p-b-9">
                   <span className="size-w-3">
                     <i className="fa fa-envelope-o" aria-hidden="true"></i>
@@ -63,7 +60,6 @@ const Footer = () => {
                     <span className="size-w-4">teknopark@beun.edu.tr</span>
                   </a>
                 </li>
-
                 <li className="flex-wr-s-s t1-s-2 cl-13 p-b-9">
                   <span className="size-w-3">
                     <i className="fa fa-phone" aria-hidden="true"></i>
@@ -76,31 +72,31 @@ const Footer = () => {
             </div>
 
             <div className="col-sm-8 col-md-5 col-lg-3 p-b-20">
-              <div className="size-h-1 flex-s-e m-b-18">
-                <h4 className="t1-m-3 cl-0">Hızlı Linkler</h4>
+              <div className="size-h-1 flex-s-e m-b-18 justify-content-center">
+                <h4 className="t1-m-3 cl-0 ">Hızlı Linkler</h4>
               </div>
 
-              <div className="flex-wr-s-s">
+              <div className="flex-wr-s-s justify-content-center">
                 <ul className="w-50">
                   <li className="kit-list1 p-b-9">
                     <a
-                      href="index.html"
+                      href="Hakkimizda"
                       className="t1-s-2 cl-13 hov-link2 trans-02"
                     >
-                      Kurumsal
+                      Hakkımızda
                     </a>
                   </li>
                   <li className="kit-list1 p-b-9">
                     <a
-                      href="projects-grid.html"
+                      href="YonetimKurulu"
                       className="t1-s-2 cl-13 hov-link2 trans-02"
                     >
-                      Mevzuat
+                      Yönetim Kurulu
                     </a>
                   </li>
                   <li className="kit-list1 p-b-9">
                     <a
-                      href="services-list.html"
+                      href="Firmalarimiz"
                       className="t1-s-2 cl-13 hov-link2 trans-02"
                     >
                       Firmalar
@@ -108,7 +104,8 @@ const Footer = () => {
                   </li>
                   <li className="kit-list1 p-b-9">
                     <a
-                      href="about.html"
+                      href="https://tto.beun.edu.tr"
+                      target="_blank"
                       className="t1-s-2 cl-13 hov-link2 trans-02"
                     >
                       TTO
@@ -116,7 +113,7 @@ const Footer = () => {
                   </li>
                   <li className="kit-list1 p-b-9">
                     <a
-                      href="contact.html"
+                      href="Kariyer"
                       className="t1-s-2 cl-13 hov-link2 trans-02"
                     >
                       Kariyer
@@ -124,7 +121,7 @@ const Footer = () => {
                   </li>
                   <li className="kit-list1 p-b-9">
                     <a
-                      href="contact.html"
+                      href="Iletisim"
                       className="t1-s-2 cl-13 hov-link2 trans-02"
                     >
                       İletişim
@@ -134,7 +131,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-sm-8 col-md-5 col-lg-3 p-b-20">
-              <div className="size-h-1 flex-s-e m-b-18">
+              <div className="size-h-1 flex-s-e m-b-18 justify-content-center">
                 <h4 className="t1-m-3 cl-0">www.zonguldakteknopark.com</h4>
               </div>
               <div className="py-2">

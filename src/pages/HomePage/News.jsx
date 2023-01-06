@@ -24,7 +24,7 @@ const News = () => {
         ...item,
         icerik:
           item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
-        route: getPath("IcerikDetay", { id: item.icerikId }),
+        route: getPath("Haberler", { id: item.id }),
       }))
     }
     return false
@@ -36,7 +36,7 @@ const News = () => {
       style={{ backgroundColor: "white" }}
     >
       <CContainer>
-        <div className="flex-col-c-c p-b-50">
+        <div className="flex-col-c-c p-b-50 text-center">
           <h3 className="t1-b-1 cl-3 txt-center m-b-11">Haberler</h3>
           <div className="size-a-2 bg-3"></div>
         </div>
@@ -51,17 +51,17 @@ const News = () => {
           >
             {itemList &&
               itemList.map((item) => (
-                <SwiperSlide key={item.id}>
+                <SwiperSlide key={item.icerikId}>
                   <div
-                    className="bg-0 h-full"
+                    className="bg-0 h-full shadow-sm"
                     style={{ backgroundColor: "#F6F6F6", margin: "10% 0" }}
                   >
                     <a
-                      className="hov-img0 of-hidden"
+                      className="hov-img0 of-hidden ratio ratio-16x9"
                       style={{ backgroundColor: "#F6F6F6" }}
                       href={item.route}
                     >
-                      <img src={BASE_IMG + item.resim_Dizin} alt="IMG" />
+                      <img className="mh-100" src={BASE_IMG + item.resim_Dizin} alt="IMG" />
                     </a>
 
                     <div
@@ -77,7 +77,7 @@ const News = () => {
                           </span>
                         </div>
                       </div>
-                      <p className="t1-s-2 cl-6 p-b-20">{item.baslik}</p>
+                      <b><p className="t1-s-2 cl-6 p-b-20">{item.baslik}</p></b>
                       <p className="t1-s-2 cl-6 p-b-20">{item.icerik}</p>
 
                       <CButton
@@ -89,7 +89,7 @@ const News = () => {
                         variant="outline"
                         href={item.route}
                       >
-                        Devamını oku..
+                        Haberi oku..
                       </CButton>
                     </div>
                   </div>

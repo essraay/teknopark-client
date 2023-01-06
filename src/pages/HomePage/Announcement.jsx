@@ -24,7 +24,7 @@ const Announcement = () => {
         ...item,
         icerik:
           item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
-        route: getPath("IcerikDetay", { id: item.icerikId }),
+        route: getPath("Duyurular", { id: item.id }),
       }))
     }
     return false
@@ -53,12 +53,12 @@ const Announcement = () => {
               itemList.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div
-                    className="bg-0 h-full"
+                    className="bg-0 h-full shadow-sm"
                     style={{ backgroundColor: "#F6F6F6", margin: "10% 0" }}
                   >
                     <a
                       className="hov-img0 of-hidden"
-                      style={{ backgroundColor: "#F6F6F6" }}
+                      style={{ backgroundColor: "white" }}
                       href={item.route}
                     >
                       <img src={BASE_IMG + item.resim_Dizin} alt="IMG" />
@@ -66,9 +66,9 @@ const Announcement = () => {
 
                     <div
                       className="bg-0 p-rl-28 p-t-26 p-b-35"
-                      style={{ backgroundColor: "#F6F6F6" }}
+                      style={{ backgroundColor: "white" }}
                     >
-                      <p className="t1-s-2 cl-6 p-b-20">{item.baslik}</p>
+                      <b><p className="t1-s-2 cl-6 p-b-20">{item.baslik}</p></b>
                       <p className="t1-s-2 cl-6 p-b-20">{item.icerik}</p>
 
                       <CButton
@@ -80,7 +80,7 @@ const Announcement = () => {
                         variant="outline"
                         href={item.route}
                       >
-                        Devamını oku..
+                        Duyuruyu görüntüle..
                       </CButton>
                     </div>
                   </div>

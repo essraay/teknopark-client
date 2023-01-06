@@ -18,16 +18,19 @@
     "bootstrap": "^5.2.3",
     "dayjs": "^1.11.7",
     "eslint": "^8.29.0",
+    "formik": "^2.2.9",
     "jquery": "^3.6.3",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-multi-carousel": "^2.8.2",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "revslider": "^5.4.201-8.6",
     "sass": "^1.56.2",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
