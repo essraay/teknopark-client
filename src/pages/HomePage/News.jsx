@@ -37,8 +37,8 @@ const News = () => {
     >
       <CContainer>
         <div className="flex-col-c-c p-b-50 text-center">
-          <h3 className="t1-b-1 cl-3 txt-center m-b-11">Haberler</h3>
-          <div className="size-a-2 bg-3"></div>
+          <h3 className="t1-b-1 cl-3 txt-center m-b-11" style={{color:"#2C3E50"}}>Haberler</h3>
+          <div className="size-a-2 bg-3" style={{backgroundColor:"#2C3E50"}}></div>
         </div>
         {loading ? (
           <LoadingSpinner />

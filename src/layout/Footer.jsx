@@ -18,19 +18,19 @@ const Footer = () => {
               </div>
 
               <div className="size-h-1 flex-s-e p-b-6 m-b-18 gap-3">
-                <a href="https://www.facebook.com/zonguldakteknopark">
+                <a href="https://www.facebook.com/zonguldakteknopark" target="_blank">
                   <i className="fa fa-facebook" aria-hidden="true"></i>
                 </a>
 
-                <a href="https://twitter.com/TgbZonguldak1">
+                <a href="https://twitter.com/TgbZonguldak1" target="_blank">
                   <i className="fa fa-twitter" aria-hidden="true"></i>
                 </a>
 
-                <a href="https://www.instagram.com/zonguldakteknopark/">
+                <a href="https://www.instagram.com/zonguldakteknopark/" target="_blank">
                   <i className="fa fa-instagram" aria-hidden="true"></i>
                 </a>
 
-                <a href="https://tr.linkedin.com/company/zonguldak-teknopark">
+                <a href="https://tr.linkedin.com/company/zonguldak-teknopark" target="_blank">
                   <i className="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
               </div>

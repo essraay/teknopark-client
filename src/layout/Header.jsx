@@ -1,6 +1,6 @@
-import { CContainer, CHeader } from "@coreui/react";
-import React from "react";
-import Navbar from "./Navbar";
+import { CContainer, CHeader } from "@coreui/react"
+import React from "react"
+import Navbar from "./Navbar"
 
 const Header = () => {
   return (
@@ -32,15 +32,27 @@ const Header = () => {
           </div>
 
           <div className="text-nowrap">
-            <a href="#" className="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+            <a
+              href="https://www.facebook.com/zonguldakteknopark"
+              target="_blank"
+              className="fs-16 cl-13 hov-link2 trans-02 m-l-15"
+            >
               <i className="fa fa-facebook-official"></i>
             </a>
 
-            <a href="#" className="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+            <a
+              href="https://twitter.com/TgbZonguldak1"
+              target="_blank"
+              className="fs-16 cl-13 hov-link2 trans-02 m-l-15"
+            >
               <i className="fa fa-twitter"></i>
             </a>
 
-            <a href="#" className="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+            <a
+              href="https://www.instagram.com/zonguldakteknopark/"
+              target="_blank"
+              className="fs-16 cl-13 hov-link2 trans-02 m-l-15"
+            >
               <i className="fa fa-instagram"></i>
             </a>
 
@@ -55,7 +67,7 @@ const Header = () => {
         </CContainer>
       </CHeader>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
