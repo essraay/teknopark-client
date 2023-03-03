@@ -16,22 +16,7 @@ const Logo = () => {
       setLoading(false)
     })
   }, [])
-
-  // const [imageList, setImageList] = useState([
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  //   "https://via.placeholder.com/140x100",
-  // ])
+  
   const [controlledSwiper, setControlledSwiper] = useState(null)
   return (
     <>

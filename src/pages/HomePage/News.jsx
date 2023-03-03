@@ -24,6 +24,8 @@ const News = () => {
         ...item,
         icerik:
           item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
+        baslik:
+          item.baslik.substring(0, 32) + (item.baslik.length > 32 ? "..." : ""),
         route: getPath("Haberler", { id: item.id }),
       }))
     }
@@ -51,7 +53,7 @@ const News = () => {
           >
             {itemList &&
               itemList.map((item) => (
-                <SwiperSlide key={item.icerikId}>
+                <SwiperSlide key={item.icerikId} className="p-1 col-12 col-md-6 col-lg-4 col-xl-3">
                   <div
                     className="bg-0 h-full shadow-sm"
                     style={{ backgroundColor: "#F6F6F6", margin: "10% 0" }}
@@ -61,7 +63,7 @@ const News = () => {
                       style={{ backgroundColor: "#F6F6F6" }}
                       href={item.route}
                     >
-                      <img className="mh-100" src={BASE_IMG + item.resim_Dizin} alt="IMG" />
+                      <img className="mh-100" src={BASE_IMG + item?.resim_Dizin} alt="IMG" />
                     </a>
 
                     <div

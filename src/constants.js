@@ -1,1 +1,1 @@
-export const BASE_IMG = "http://localhost:5000/"
+export const BASE_IMG = "https://localhost:5001/"

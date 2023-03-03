@@ -31,12 +31,6 @@ const ContentsDetail = () => {
         <img className="w-50" src={BASE_IMG + items.resim_Dizin} alt="IMG" />
         <CCardText style={{ margin: "2% 0" }}>{items.icerik}</CCardText>
       </CCardBody>
-      {/* <p className="text-start">Resimler</p>
-      <img
-        className="w-25"
-        src={items?.icerik_Resimler?.resim_Dizin}
-        alt="IMG"
-      /> */}
       <CCardFooter
         className="text-medium-emphasis shadow-sm"
         style={{ backgroundColor: "#EBEDEF" }}
@@ -54,12 +48,7 @@ const ContentsDetail = () => {
             <LeftMenu />
           </div>
           <div class="col-md-9">
-            {/* <CCard
-                className="justify-content-center text-center"
-                style={{ margin: "2% 0" }}
-              > */}
             {!loading ? items && userArea : <LoadingSpinner />}
-            {/* </CCard> */}
           </div>
         </div>
       </div>

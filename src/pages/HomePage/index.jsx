@@ -1,7 +1,7 @@
-import Announcement from "./Announcement";
-import Logo from "./Logo";
-import News from "./News";
-import Slider from "./Slider";
+import Announcement from "./Announcement"
+import Logo from "./Logo"
+import News from "./News"
+import Slider from "./Slider"
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Announcement />
       <Logo />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

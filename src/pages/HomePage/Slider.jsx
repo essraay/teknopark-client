@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const SwiperItem = ({ children }) => (
   <div
-    className="w-100"
+    className=" w-100"
     style={{
       aspectRatio: "2.78",
       backgroundImage: "url('/slider1.png')",
@@ -62,11 +62,9 @@ const Slider = () => {
       ]}
       spaceBetween={50}
       slidesPerView={1}
-      // onSlideChange={() => console.log("slide change")}
-      // onSwiper={(swiper) => console.log(swiper)}
       navigation
       parallax
-      effect={"cards"}
+      effect={"slide"}
       autoplay={{
         delay: 3000,
       }}
