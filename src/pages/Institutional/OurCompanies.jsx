@@ -32,11 +32,11 @@ const OurCompanies = () => {
             {items.map((item) => (
               <div className="p-2 col-12 col-md-6 col-lg-4 col-xl-3">
                 <a href={item?.baglanti} target={"_blank"}>
-                  <CCard key={item.id} className="shadow">
+                  <CCard key={item?.id} className="shadow">
                     <div className="ratio ratio-16x9">
                       <img
                         className="card-img-top img-fluid mh-100"
-                        src={BASE_IMG + item.resim_Dizin}
+                        src={BASE_IMG + item?.resim_Dizin}
                         style={{ objectFit: "contain" }}
                         alt="Card image cap"
                       />
@@ -44,7 +44,7 @@ const OurCompanies = () => {
                     <br />
                     <div className="card-body text-center ratio ratio-16x9">
                       <p className="card-text">
-                        <b style={{color:"blue"}}>{item.firma_Adi}</b>
+                        <b style={{color:"blue"}}>{item?.firma_Adi}</b>
                       </p>
                     </div>
                   </CCard>

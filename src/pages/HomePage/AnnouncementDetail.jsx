@@ -37,11 +37,11 @@ const ContentsDetail = () => {
       <CCardBody>
         <img className="w-50" src={BASE_IMG + items.resim_Dizin} alt="IMG" />
         <CCardText style={{ margin: "1% 0" }}>{items.icerik}</CCardText>
-        <img
+        {/* <img
           className="w-25"
           src={BASE_IMG + items?.icerik_Resimler?.resim_Dizin}
           alt="IMG"
-        />
+        /> */}
       </CCardBody>
       <CCardFooter
         className="text-medium-emphasis"
@@ -53,12 +53,12 @@ const ContentsDetail = () => {
   )
 
   return (
-    <div class="container text-center" style={{ backgroundColor: "white" }}>
-      <div class="row" style={{ margin: "2% 0" }}>
-        <div class="col-3">
+    <div className="container text-center" style={{ backgroundColor: "white" }}>
+      <div className="row" style={{ margin: "2% 0" }}>
+        <div className="col-3">
           <LeftMenu />
         </div>
-        <div class="col-9">
+        <div className="col-9">
           {!loading ? items && userArea : <LoadingSpinner />}
         </div>
       </div>

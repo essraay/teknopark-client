@@ -22,10 +22,10 @@ const News = () => {
     if (Array.isArray(items)) {
       return items.reverse().map((item) => ({
         ...item,
-        icerik:
-          item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
-        baslik:
-          item.baslik.substring(0, 32) + (item.baslik.length > 32 ? "..." : ""),
+        // icerik:
+        //   item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
+        // baslik:
+        //   item.baslik.substring(0, 32) + (item.baslik.length > 32 ? "..." : ""),
         route: getPath("Haberler", { id: item.id }),
       }))
     }
@@ -39,8 +39,16 @@ const News = () => {
     >
       <CContainer>
         <div className="flex-col-c-c p-b-50 text-center">
-          <h3 className="t1-b-1 cl-3 txt-center m-b-11" style={{color:"#2C3E50"}}>Haberler</h3>
-          <div className="size-a-2 bg-3" style={{backgroundColor:"#2C3E50"}}></div>
+          <h3
+            className="t1-b-1 cl-3 txt-center m-b-11"
+            style={{ color: "#2C3E50" }}
+          >
+            Haberler
+          </h3>
+          <div
+            className="size-a-2 bg-3"
+            style={{ backgroundColor: "#2C3E50" }}
+          ></div>
         </div>
         {loading ? (
           <LoadingSpinner />
@@ -53,23 +61,28 @@ const News = () => {
           >
             {itemList &&
               itemList.map((item) => (
-                <SwiperSlide key={item.icerikId} className="p-1 col-12 col-md-6 col-lg-4 col-xl-3">
+                <SwiperSlide
+                  key={item.icerikId}
+                  className="p-1 h-auto"
+                  style={{ backgroundColor: "#F6F6F6" }}
+                >
                   <div
-                    className="bg-0 h-full shadow-sm"
-                    style={{ backgroundColor: "#F6F6F6", margin: "10% 0" }}
+                    className="h-full shadow-sm"
+                    style={{ backgroundColor: "#F6F6F6" }}
                   >
                     <a
-                      className="hov-img0 of-hidden ratio ratio-16x9"
-                      style={{ backgroundColor: "#F6F6F6" }}
+                      className="hov-img0 of-hidden ratio ratio-1x1"
                       href={item.route}
                     >
-                      <img className="mh-100" src={BASE_IMG + item?.resim_Dizin} alt="IMG" />
+                      <img
+                        className="w-100 h-100"
+                        style={{ objectFit: "cover" }}
+                        src={BASE_IMG + item?.resim_Dizin}
+                        alt="IMG"
+                      />
                     </a>
 
-                    <div
-                      className="bg-0 p-rl-28 p-t-26 p-b-35"
-                      style={{ backgroundColor: "#F6F6F6" }}
-                    >
+                    <div className="p-rl-28 p-t-26 p-b-35">
                       <div className="flex-wr-s-c p-b-9">
                         <div className="p-r-20">
                           <i className="fs-14 cl-7 fa fa-calendar m-r-2"></i>
@@ -79,8 +92,29 @@ const News = () => {
                           </span>
                         </div>
                       </div>
-                      <b><p className="t1-s-2 cl-6 p-b-20">{item.baslik}</p></b>
-                      <p className="t1-s-2 cl-6 p-b-20">{item.icerik}</p>
+                      <b>
+                        <p
+                          className="t1-s-2 cl-6 m-b-20"
+                          style={{
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {item.baslik}
+                        </p>
+                      </b>
+                      <p
+                        className="t1-s-2 cl-6 m-b-20"
+                        style={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {item.icerik}
+                      </p>
 
                       <CButton
                         style={{

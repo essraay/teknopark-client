@@ -8,17 +8,17 @@ const Management = () => {
         backgroundPosition: "center center",
       }}
     >
-      <div class="l-container">
+      <div className="l-container">
         <div
-          class="l-row"
+          className="l-row"
           style={{ paddingLeft: "8%", paddingRight: "8%", margin: "2% 0" }}
         >
           <b>
             <h3 style={{ margin: "2% 0" }}>Yönetim Kurulu Başkanı</h3>
           </b>
-          <a href="#" style={{ width: "100%" }}>
+          <a style={{ width: "100%" }}>
             <img
-              src="/src/assets/yonetimkurulu/profdrismailhakkiozolcer.png"
+              src="/images/yonetimkurulu/profdrismailhakkiozolcer.png"
               alt="Prof. Dr. İsmail Hakkı ÖZÖLÇER"
               style={{ width: "100%", margin: "2% 0" }}
             />
@@ -31,42 +31,42 @@ const Management = () => {
           </h5>
         </div>
         <div
-          class="l-row"
+          className="l-row"
           style={{ paddingLeft: "8%", paddingRight: "8%", margin: "2% 0" }}
         >
           <b>
             <h4>Yönetim Kurulu Üyesi (Başkan Yrd.)</h4>
           </b>
-          <a href="#" style={{ width: "100%" }}>
+          <a style={{ width: "100%" }}>
             <img
-              src="/src/assets/yonetimkurulu/turgutsubasi.jpg"
+              src="/images/yonetimkurulu/turgutsubasi.jpg"
               alt="Turgut SUBAŞI"
               style={{ width: "100%", margin: "2% 0" }}
             />
           </a>
           <h5 style={{ textAlign: "center" }}>Turgut SUBAŞI</h5>
           <h5 style={{ textAlign: "center" }}>
-            Zonguldak İl Özel İdaresi Temsilen Vali Yrd. Turgut SUBAŞI
+            Zonguldak İl Özel İdaresi Temsilen Vali Yardımcısı
           </h5>
         </div>
         <br />
         <div
-          class="l-row"
+          className="l-row"
           style={{ paddingLeft: "8%", paddingRight: "8%", margin: "2% 0" }}
         >
           <b>
             <h4>Yönetim Kurulu Üyesi</h4>
           </b>
-          <a href="#" style={{ width: "100%" }}>
+          <a style={{ width: "100%" }}>
             <img
-              src="/src/assets/yonetimkurulu/recepocak.png"
+              src="/images/yonetimkurulu/zekaikamitoglu.jpg"
               alt="Recep OCAK"
               style={{ width: "100%", margin: "2% 0" }}
             />
           </a>
-          <h5 style={{ textAlign: "center" }}>Recep OCAK</h5>
+          <h5 style={{ textAlign: "center" }}>Zekai KAMİTOĞLU</h5>
           <h5 style={{ textAlign: "center" }}>
-            Alaplı Ticaret ve Sanayi Odası Yön. Kur. Başkanı
+          Çaycuma Ticaret ve Sanayi Odası Yönetim Kurulu Başkanı
           </h5>
         </div>
       </div>

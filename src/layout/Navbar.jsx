@@ -43,25 +43,25 @@ const Navbar = () => {
           >
             <CNavbarNav className="gap-3">
               <NavbarDropdown title="Kurumsal">
-                <CDropdownItem href="/Hakkimizda" className="fw-bolder">
+                <CDropdownItem href="/#/Hakkimizda" className="fw-bolder">
                   Hakkımızda
                 </CDropdownItem>
-                <CDropdownItem href="/VizyonMisyon" className="fw-bolder">
+                <CDropdownItem href="/#/VizyonMisyon" className="fw-bolder">
                   Vizyon - Misyon
                 </CDropdownItem>
-                <CDropdownItem href="/YonetimKurulu" className="fw-bolder">
+                <CDropdownItem href="/#/YonetimKurulu" className="fw-bolder">
                   Yönetim Kurulu
                 </CDropdownItem>
-                <CDropdownItem href="/KurucuOrtaklarımız" className="fw-bolder">
+                <CDropdownItem href="/#/KurucuOrtaklarımız" className="fw-bolder">
                   Ortaklar
                 </CDropdownItem>
-                <CDropdownItem href="/Ekibimiz" className="fw-bolder">
+                <CDropdownItem href="/#/Ekibimiz" className="fw-bolder">
                   Ekibimiz
                 </CDropdownItem>
-                <CDropdownItem href="/KVKK" className="fw-bolder">
+                <CDropdownItem href="/#/KVKK" className="fw-bolder">
                   K.V.K.K
                 </CDropdownItem>
-                <CDropdownItem href="/SSS" className="fw-bolder">
+                <CDropdownItem href="/#/SSS" className="fw-bolder">
                   S.S.S
                 </CDropdownItem>
               </NavbarDropdown>
@@ -87,11 +87,11 @@ const Navbar = () => {
                 >
                   Teknoloji Geliştirme Bölgeleri Uygulama Yönetmeliği
                 </CDropdownItem>
-                <CDropdownItem href="/DigerMevzuat" className="fw-bolder">
+                <CDropdownItem href="/#/DigerMevzuat" className="fw-bolder">
                   Diğer Mevzuatlar
                 </CDropdownItem>
               </NavbarDropdown>
-              <NavItem href="/Firmalarimiz">
+              <NavItem href="/#/Firmalarimiz">
                 <p className="fw-bolder">Firmalar</p>
               </NavItem>
               <div className="d-none d-lg-block">
@@ -108,10 +108,10 @@ const Navbar = () => {
               <NavItem href="https://tto.beun.edu.tr" target={"_blank"}>
                 <p className="fw-bolder">TTO</p>
               </NavItem>
-              <NavItem href="/Kariyer">
+              <NavItem href="/#/Kariyer">
                 <p className="fw-bolder">Kariyer</p>
               </NavItem>
-              <NavItem href="/Iletisim">
+              <NavItem href="/#/Iletisim">
                 <p className="fw-bolder">İletişim</p>
               </NavItem>
             </CNavbarNav>

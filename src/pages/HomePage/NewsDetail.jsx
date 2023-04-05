@@ -28,8 +28,20 @@ const ContentsDetail = () => {
         <b>{items.baslik}</b>
       </CCardHeader>
       <CCardBody>
-        <img className="w-50" src={BASE_IMG + items.resim_Dizin} alt="IMG" />
-        <CCardText style={{ margin: "2% 0" }}>{items.icerik}</CCardText>
+        <img className="w-25" src={BASE_IMG + items.resim_Dizin} alt="IMG" />
+        <CCardText className="justify-content-xl-between" style={{ margin: "2% 0" }}>{items.icerik}</CCardText>
+        {/* {items?.icerik_Resimler.map((x) => (
+          <div className="grid" style={{ margin: "1% 0" }}>
+            <div className="d-grid">
+              <img src={BASE_IMG + x.resim_Dizin} width={"100px"} />
+            </div>
+          </div>
+        ))} */}
+        {/* {items?.icerik_Dosyalar.map((x) => (
+          <CCardText className="text-left" style={{ margin: "1% 0" }}>
+            <a href={BASE_IMG + x.dosya}>Haber eki - {x.id}</a>
+          </CCardText>
+        ))} */}
       </CCardBody>
       <CCardFooter
         className="text-medium-emphasis shadow-sm"
@@ -42,12 +54,18 @@ const ContentsDetail = () => {
 
   return (
     <>
-      <div class="container text-center" style={{ backgroundColor: "white" }}>
-        <div class="row" style={{ margin: "2% 0" }}>
-          <div class="col-md-3 order-1 order-md-0" style={{ margin: "2% 0" }}>
+      <div
+        className="container text-center"
+        style={{ backgroundColor: "white" }}
+      >
+        <div className="row" style={{ margin: "2% 0" }}>
+          <div
+            className="col-md-3 order-1 order-md-0"
+            style={{ margin: "2% 0" }}
+          >
             <LeftMenu />
           </div>
-          <div class="col-md-9">
+          <div className="col-md-9">
             {!loading ? items && userArea : <LoadingSpinner />}
           </div>
         </div>

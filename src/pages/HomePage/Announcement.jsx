@@ -22,10 +22,6 @@ const Announcement = () => {
     if (Array.isArray(items)) {
       return items.map((item) => ({
         ...item,
-        icerik:
-          item.icerik.substring(0, 80) + (item.icerik.length > 80 ? "..." : ""),
-        baslik:
-          item.baslik.substring(0, 32) + (item.baslik.length > 32 ? "..." : ""),
         route: getPath("Duyurular", { id: item.id }),
       }))
     }
@@ -61,20 +57,21 @@ const Announcement = () => {
           >
             {itemList &&
               itemList.map((item) => (
-                <SwiperSlide
-                  key={item.id}
-                  className="p-1 col-12 col-md-6 col-lg-4 col-xl-3"
-                >
+                <SwiperSlide key={item.id} className="p-1 h-auto">
                   <div
                     className="bg-0 h-full shadow-sm"
-                    style={{ backgroundColor: "#F6F6F6", margin: "10% 0" }}
                   >
                     <a
-                      className="hov-img0 of-hidden ratio ratio-16x9"
+                      className="hov-img0 of-hidden ratio ratio-1x1"
                       style={{ backgroundColor: "white" }}
                       href={item.route}
                     >
-                      <img src={BASE_IMG + item?.resim_Dizin} alt="IMG"/>
+                      <img
+                        className="w-100 h-100"
+                        src={BASE_IMG + item?.resim_Dizin}
+                        alt="IMG"
+                        style={{ objectFit: "cover" }}
+                      />
                     </a>
 
                     <div
@@ -82,9 +79,28 @@ const Announcement = () => {
                       style={{ backgroundColor: "white" }}
                     >
                       <b>
-                        <p className="t1-s-2 cl-6 p-b-20 h-100">{item.baslik}</p>
+                        <p
+                          className="t1-s-2 cl-6 m-b-20 h-100"
+                          style={{
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {item.baslik}
+                        </p>
                       </b>
-                      <p className="t1-s-2 cl-6 p-b-20 h-100">{item.icerik}</p>
+                      <p
+                        className="t1-s-2 cl-6 m-b-20 h-100"
+                        style={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {item.icerik}
+                      </p>
 
                       <CButton
                         style={{

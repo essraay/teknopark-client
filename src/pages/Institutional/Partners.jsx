@@ -8,7 +8,7 @@ const Partners = () => {
               <b className="h3 fw-bold">Kurucu Ortaklarımız</b>
               <div class="col-3" style={{ margin: "2% 0" }}>
                 <img
-                  src="/src/assets/kurucuortaklar/beu.png"
+                  src="/images/kurucuortaklar/beu.png"
                   class="img-responsive"
                   alt="Image"
                 />
@@ -34,7 +34,7 @@ const Partners = () => {
             <div class="item-partner-list">
               <div class="col-md-3">
                 <img
-                  src="/src/assets/kurucuortaklar/ilozelidaresi.png"
+                  src="/images/kurucuortaklar/ilozelidaresi.png"
                   class="img-responsive"
                   alt="Image"
                 />
@@ -61,7 +61,7 @@ const Partners = () => {
             <div class="item-partner-list">
               <div class="col-md-3">
                 <img
-                  src="/src/assets/kurucuortaklar/ztso.png"
+                  src="/images/kurucuortaklar/ztso.png"
                   class="img-responsive"
                   alt="Image"
                 />
@@ -90,7 +90,7 @@ const Partners = () => {
             <div class="item-partner-list">
               <div class="col-md-3">
                 <img
-                  src="/src/assets/kurucuortaklar/etso.png"
+                  src="/images/kurucuortaklar/etso.png"
                   class="img-responsive"
                   alt="Image"
                 />
@@ -119,7 +119,7 @@ const Partners = () => {
             <div class="item-partner-list">
               <div class="col-md-3">
                 <img
-                  src="/src/assets/kurucuortaklar/ctso.png"
+                  src="/images/kurucuortaklar/ctso.png"
                   class="img-responsive"
                   alt="Image"
                 />
@@ -148,7 +148,7 @@ const Partners = () => {
             <div class="item-partner-list">
               <div class="col-md-3">
                 <img
-                  src="/src/assets/kurucuortaklar/atso.png"
+                  src="/images/kurucuortaklar/atso.png"
                   class="img-responsive"
                   alt="Image"
                 />
@@ -175,7 +175,7 @@ const Partners = () => {
             <div class="item-partner-list">
               <div class="col-md-3">
                 <img
-                  src="/src/assets/kurucuortaklar/dtso.png"
+                  src="/images/kurucuortaklar/dtso.png"
                   class="img-responsive"
                   alt="Image"
                 />
