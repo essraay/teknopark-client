@@ -94,7 +94,7 @@ const Navbar = () => {
               <NavItem href="/#/Firmalarimiz">
                 <p className="fw-bolder">Firmalar</p>
               </NavItem>
-              <div className="d-none d-lg-block">
+              <div className="d-none d-lg-block pulse-shrink" rel="pulse-shrink">
                 <NavItem href={getPath("Anasayfa")}>
                   <img src="/logobeu.png" width={"150px"} />
                 </NavItem>
