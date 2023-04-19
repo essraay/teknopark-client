@@ -16,7 +16,7 @@ const Logo = () => {
       setLoading(false)
     })
   }, [])
-  
+
   const [controlledSwiper, setControlledSwiper] = useState(null)
   return (
     <>
@@ -54,7 +54,8 @@ const Logo = () => {
               {items.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div
-                    className="row d-flex justify-content-center py-3"
+                    className="row d-flex justify-content-center py-3 pulse-shrink"
+                    rel="pulse-shrink"
                     style={{ margin: "10% 0" }}
                   >
                     <a href={item.baglanti} target={"_blank"}>
@@ -62,7 +63,7 @@ const Logo = () => {
                         className="rounded-circle w-100"
                         style={{ objectFit: "contain" }}
                         src={BASE_IMG + item.resim_Dizin}
-                        width={"10px"}
+                        width={"20 %"}
                       />
                     </a>
                   </div>

@@ -11,6 +11,7 @@ import {
 import { useEffect, useMemo, useState } from "react"
 import { BASE_IMG } from "../../constants"
 import { OurCompaniesService } from "../../services"
+import LoadingSpinner from "../../components/LoadingSpinner"
 
 const OurCompanies = () => {
   const [loading, setLoading] = useState(true)
@@ -52,30 +53,39 @@ const OurCompanies = () => {
           ></div>
         </div>
         {loading ? (
-          <h1>Yükleniyor..</h1>
+          <LoadingSpinner/>
         ) : (
           <>
             <div className="row">
               {items.map((item) => (
-                <div className="p-2 col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                  <CCard key={item?.id} className="shadow">
+                <div className="p-2 col-6 col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 ">
+                  <CCard key={item?.id} className=" rounded-4 companies-card">
                     <div className="ratio ratio-16x9">
                       <img
-                        className="card-img-top img-fluid mh-100"
+                        className="card-img-top img-fluid mh-100 rounded-4"
                         src={BASE_IMG + item?.resim_Dizin}
-                        style={{ objectFit: "contain" }}
+                        style={{ objectFit: "inherit" }}
                         alt="Card image cap"
                       />
                     </div>
                     <br />
-                    <div
-                      className="card-body text-center"
-                    >
-                      <p className="card-text" style={{ aspectRatio: 1.9 }}>
-                        <b style={{ color: "blue" }}>{item?.firma_Adi}</b>
+                    <div className="card-body text-center">
+                      <p className="card-text" style={{ aspectRatio: 3 }}>
+                        <b style={{ color: "#666", fontSize:14 }}>
+                          {item.firma_Adi.length > 58
+                            ? item.firma_Adi.substring(0, 58) + ".."
+                            : item.firma_Adi}
+                        </b>
                       </p>
                     </div>
-                    <CButton onClick={() => handleShowModal(item?.id)}>
+                    <CButton
+                      className="col-6 mx-auto"
+                      style={{margin: "1% 0"}}
+                      color="secondary"
+                      variant="ghost"
+                      shape="rounded-pill"
+                      onClick={() => handleShowModal(item?.id)}
+                    >
                       Detay
                     </CButton>
                   </CCard>
@@ -100,7 +110,7 @@ const OurCompanies = () => {
                 href={selectedItem?.baglanti}
                 target={"_blank"}
               >
-                Firmayı görüntüle
+                {selectedItem.baglanti ? "Firmayı Görüntüle" : " "}
               </a>
             </>
           )}
