@@ -53,7 +53,7 @@ const OurCompanies = () => {
           ></div>
         </div>
         {loading ? (
-          <LoadingSpinner/>
+          <LoadingSpinner />
         ) : (
           <>
             <div className="row">
@@ -68,10 +68,12 @@ const OurCompanies = () => {
                         alt="Card image cap"
                       />
                     </div>
-                    <br />
                     <div className="card-body text-center">
                       <p className="card-text" style={{ aspectRatio: 3 }}>
-                        <b style={{ color: "#666", fontSize:14 }}>
+                        <b
+                          title={item.firma_Adi}
+                          style={{ color: "#576C7E", fontSize: 14 }}
+                        >
                           {item.firma_Adi.length > 58
                             ? item.firma_Adi.substring(0, 58) + ".."
                             : item.firma_Adi}
@@ -80,7 +82,7 @@ const OurCompanies = () => {
                     </div>
                     <CButton
                       className="col-6 mx-auto"
-                      style={{margin: "1% 0"}}
+                      style={{ margin: "1% 0" }}
                       color="secondary"
                       variant="ghost"
                       shape="rounded-pill"
@@ -91,6 +93,7 @@ const OurCompanies = () => {
                   </CCard>
                 </div>
               ))}
+              
             </div>
             <br />
           </>
@@ -98,15 +101,15 @@ const OurCompanies = () => {
       </CContainer>
       <CModal scrollable visible={visible} onClose={() => setVisible(false)}>
         <CModalHeader>
-          <CModalTitle>Firma Hakkında</CModalTitle>
+          <CModalTitle className="text-black">Firma Hakkında</CModalTitle>
         </CModalHeader>
         <CModalBody>
           {selectedItem && (
             <>
-              <p>{selectedItem?.aciklama_Metni}</p>
-              <br />
+              <p style={{fontSize:14}}>{selectedItem?.aciklama_Metni}</p>
+              <hr />
               <a
-                className="text-bold"
+                className="text-success"
                 href={selectedItem?.baglanti}
                 target={"_blank"}
               >

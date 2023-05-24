@@ -29,7 +29,13 @@ const ContentsDetail = () => {
       </CCardHeader>
       <CCardBody>
         <img className="w-25" src={BASE_IMG + items.resim_Dizin} alt="IMG" />
-        <CCardText className="justify-content-xl-between" style={{ margin: "2% 0" }}>{items.icerik}</CCardText>
+        <div></div>
+        <CCardText
+          className="justify-content-xl-between"
+          style={{ margin: "2% 0" }}
+        >
+          <p style={{ textAlign: "justify" }}>{items.icerik}</p>
+        </CCardText>
         {/* {items?.icerik_Resimler.map((x) => (
           <div className="grid" style={{ margin: "1% 0" }}>
             <div className="d-grid">
@@ -59,10 +65,7 @@ const ContentsDetail = () => {
         style={{ backgroundColor: "white" }}
       >
         <div className="row" style={{ margin: "2% 0" }}>
-          <div
-            className="col-md-3 order-1 order-md-0"
-            style={{ margin: "2% 0" }}
-          >
+          <div className="col-md-3 order-1 order-md-0">
             <LeftMenu />
           </div>
           <div className="col-md-9">

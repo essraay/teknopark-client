@@ -113,6 +113,12 @@ const routes = [
         lazy: true,
       },
       {
+        path: "Kariyer/:id",
+        name: "KariyerDetay",
+        element: <Career />,
+        lazy: true,
+      },
+      {
         path: "Iletisim",
         name: "Iletisim",
         element: <Communication />,

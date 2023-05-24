@@ -89,6 +89,7 @@ const OurTeam = () => {
                       </b>
                       <div style={{ aspectRatio: "1" }}>
                         <img
+                          className="companies-card"
                           src={item.imageSrc}
                           alt={item.name}
                           style={{

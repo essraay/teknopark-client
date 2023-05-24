@@ -1,34 +1,79 @@
 const LeftMenu = () => {
   return (
     <>
-      <div className="card">
+      <div className="card" style={{ border: "none" }}>
         <ul className="list-group list-group-flush gap-1">
           <a href="/#/Hakkimizda">
-            <li className="list-group-item bg-10 text-white">Hakkımızda</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Hakkımızda
+            </li>
           </a>
           <a href="/#/YonetimKurulu">
-            <li className="list-group-item bg-10 text-white">Yönetim Kurulu</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Yönetim Kurulu
+            </li>
           </a>
           <a href="https://argeportal.beun.edu.tr/onbasvuruformu">
-            <li className="list-group-item bg-10 text-white">Vizyon - Misyon</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Vizyon - Misyon
+            </li>
           </a>
           <a href="/#/Firmalarimiz">
-            <li className="list-group-item bg-10 text-white">Firmalar</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Firmalar
+            </li>
           </a>
           <a href="/#/DigerMevzuat">
-            <li className="list-group-item bg-10 text-white">Ortaklarımız</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Ortaklarımız
+            </li>
           </a>
           <a href="https://argeportal.beun.edu.tr/onbasvuruformu">
-            <li className="list-group-item bg-10 text-white">Ön Başvuru</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Ön Başvuru
+            </li>
           </a>
           <a href="/#/DigerMevzuat">
-            <li className="list-group-item bg-10 text-white">Mevzuatlar</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Mevzuatlar
+            </li>
           </a>
           <a href="/#/Kariyer">
-            <li className="list-group-item bg-10 text-white">Kariyer</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              Kariyer
+            </li>
           </a>
           <a href="/#/Iletisim">
-            <li className="list-group-item bg-10 text-white">İletişim</li>
+            <li
+              className="list-group-item text-white"
+              style={{ backgroundColor: "#062c49" }}
+            >
+              İletişim
+            </li>
           </a>
         </ul>
       </div>

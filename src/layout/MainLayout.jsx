@@ -16,7 +16,7 @@ const MainLayout = () => {
           </div>
           <div
             className="flex-1 pr-8 pt-12"
-            style={{ backgroundColor: "#FFFFFF" }}
+            style={{ backgroundColor: "#FFFFFF"}}
           >
             <Outlet />
           </div>
